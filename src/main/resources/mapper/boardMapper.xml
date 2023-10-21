@@ -4,8 +4,8 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into post(title, author, content)
-        values(#{title}, #{author}, #{content})
+        insert into post(id, title, author, content)
+        values( post_seq.NEXTVAL,  #{title}, #{author}, #{content})
     </insert>
     
     <select id="findAll" resultType="board">
